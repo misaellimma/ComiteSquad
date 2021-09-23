@@ -10,12 +10,11 @@ public class EventoBiz {
 
     private Mensagem mensagem;
 
-    private EventoRepository eventoRepository;
+    
     private ModalidadeRepository modalidadeRepository;
     private CidadeRepository cidadeRepository;
 
-    public EventoBiz(EventoRepository eventoRepository, ModalidadeRepository modalidadeRepository, CidadeRepository cidadeRepository) {
-        this.eventoRepository = eventoRepository;
+    public EventoBiz(EventoRepository eventoRepository, ModalidadeRepository modalidadeRepository, CidadeRepository cidadeRepository) {      
         this.modalidadeRepository = modalidadeRepository;
         this.cidadeRepository = cidadeRepository;
     }
