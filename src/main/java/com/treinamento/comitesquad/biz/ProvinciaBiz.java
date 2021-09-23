@@ -18,11 +18,11 @@ public class ProvinciaBiz {
 	public Boolean validar(Provincia provincia) {
 		Boolean valido = true;
 		
-		if(provincia.getNome().length() > 50 ) {
-			msg.mensagem.add("Nao pode conter mais que 255 letras");
+		if(provincia.getNome() == null || provincia.getNome().isEmpty()) {
+			msg.mensagem.add("O nome nao pode estar vazio");
 			valido = false;
-		} else if(provincia.getNome() == null || provincia.getNome().isEmpty()) {
-		msg.mensagem.add("O nome nao pode estar vazio");
+		} else if(provincia.getNome().length() > 255 ) {
+		msg.mensagem.add("Nao pode conter mais que 255 letras");
 			valido = false;
 		}
 		
