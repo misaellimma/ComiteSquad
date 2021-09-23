@@ -17,6 +17,7 @@ public class EventoBiz {
     public EventoBiz(EventoRepository eventoRepository, ModalidadeRepository modalidadeRepository, CidadeRepository cidadeRepository) {      
         this.modalidadeRepository = modalidadeRepository;
         this.cidadeRepository = cidadeRepository;
+        this.mensagem = new Mensagem();
     }
 
     public Mensagem getMensagem() {
