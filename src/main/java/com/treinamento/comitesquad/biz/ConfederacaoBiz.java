@@ -32,7 +32,7 @@ public class ConfederacaoBiz {
 			getMensagem().mensagem.add("O nome não pode ser maior que 255 caracteres!");
 			valido = false;
 		}
-		if (comiteRepository.findById(confedercao.getId()).isEmpty()) {
+		if (comiteRepository.findById(confedercao.getId_comite()).isEmpty()) {
 			getMensagem().mensagem.add("Comitê não cadastrado");
 			valido = false;
 		}
