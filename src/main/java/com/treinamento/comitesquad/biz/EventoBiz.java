@@ -38,10 +38,10 @@ public class EventoBiz {
         } else if(evento.getDescricao().length() > 255) {
             getMensagem().mensagem.add("A descrição não pode conter mais que 255 caracteres!");
             valid = false;
-        } else if(!modalidadeRepository.findById(evento.getId_modalidade()).isEmpty()) {
+        } else if(modalidadeRepository.findById(evento.getId_modalidade()).isEmpty()) {
             getMensagem().mensagem.add("Modalidade inexistente!");
             valid = false;
-        } else if(!cidadeRepository.findById(evento.getId_cidade()).isEmpty()) {
+        } else if(cidadeRepository.findById(evento.getId_cidade()).isEmpty()) {
             getMensagem().mensagem.add("Cidade inexistente!");
             valid = false;
         }

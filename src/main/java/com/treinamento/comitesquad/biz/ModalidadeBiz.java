@@ -32,7 +32,7 @@ public class ModalidadeBiz {
         } else if(modalidade.getDescricao().length() > 255) {
             getMensagem().mensagem.add("A descrição não pode conter mais que 255 caracteres!");
             valid = false;
-        } else if(!confederacaoRepository.findById(modalidade.getId_confederacao()).isEmpty()) {
+        } else if(confederacaoRepository.findById(modalidade.getId_confederacao()).isEmpty()) {
             getMensagem().mensagem.add("Confederação inexistente!");
             valid = false;
         }
