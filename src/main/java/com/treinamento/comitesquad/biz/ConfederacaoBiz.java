@@ -1,7 +1,7 @@
 package com.treinamento.comitesquad.biz;
 
 import com.treinamento.comitesquad.Mensagem;
-import com.treinamento.comitesquad.entities.Confedercao;
+import com.treinamento.comitesquad.entities.Confederacao;
 import com.treinamento.comitesquad.repositories.ComiteRepository;
 
 public class ConfederacaoBiz {
@@ -21,7 +21,7 @@ public class ConfederacaoBiz {
 		this.mensagem = mensagem;
 	}
 	
-	public Boolean validar(Confedercao confedercao) {
+	public Boolean validar(Confederacao confedercao) {
 		Boolean valido = true;
 		
 		if (confedercao.getNome().isEmpty()) {
