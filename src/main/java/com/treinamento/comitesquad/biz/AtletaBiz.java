@@ -5,7 +5,7 @@ import com.treinamento.comitesquad.entities.Atleta;
 import com.treinamento.comitesquad.repositories.ModalidadeRepository;
 
 public class AtletaBiz {
-    private Mensagem mensagens;
+    private Mensagem mensagens = new Mensagem();
     private ModalidadeRepository modalidadeRepositorio;
     public AtletaBiz(ModalidadeRepository modalidadeRepo){
         this.modalidadeRepositorio = modalidadeRepo;
@@ -22,7 +22,18 @@ public class AtletaBiz {
         if(atleta.getNome().isBlank() || atleta.getNome() == null){
             mensagens.mensagem.add("O nome informado não deve ser nulo");
             valido=false;
+        }else if(atleta.getNome().length()>255){
+            mensagens.mensagem.add("O nome informado não deve possuir mais que 255 caracteres");
+            valido=false;
         }
         return valido;
+    }
+
+    public Mensagem getMensagens() {
+        return mensagens;
+    }
+
+    public void setMensagens(Mensagem mensagens) {
+        this.mensagens = mensagens;
     }
 }
