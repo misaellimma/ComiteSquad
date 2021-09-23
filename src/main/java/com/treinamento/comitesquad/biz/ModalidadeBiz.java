@@ -26,6 +26,13 @@ public class ModalidadeBiz {
 
         Boolean valid = true;
 
+        try {
+            Integer intValue = Integer.parseInt(modalidade.getId_confederacao);
+        } catch (NumberFormatException e) {
+            getMensagem().mensagem.add("O valor inserido não é um número");
+            valid = false;
+        }
+
         if(modalidade.getDescricao() == null || modalidade.getDescricao().isEmpty()) {
             getMensagem().mensagem.add("A descrição da modalidade não pode estar vazia!");
             valid = false;
@@ -35,7 +42,10 @@ public class ModalidadeBiz {
         } else if(confederacaoRepository.findById(modalidade.getId_confederacao()).isEmpty()) {
             getMensagem().mensagem.add("Confederação inexistente!");
             valid = false;
-        }
+        } else if(modalidade.getId_confederacao() == null) {
+            getMensagem().mensagem.add("Confederação não pode ser nulo!");
+            valid = false;
+        } else if()
 
         return valid;
 
