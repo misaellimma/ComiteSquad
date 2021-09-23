@@ -5,7 +5,7 @@ import com.treinamento.comitesquad.entities.Setor;
 import com.treinamento.comitesquad.repositories.ComiteRepository;
 
 public class SetorBiz {
-    private Mensagem mensagens;
+    private Mensagem mensagens = new Mensagem();
     private ComiteRepository comiteRepositorio;
     public SetorBiz(ComiteRepository comiteRepo){
         this.comiteRepositorio = comiteRepo;
@@ -22,7 +22,17 @@ public class SetorBiz {
         if(setor.getNome().isBlank() || setor.getNome() == null){
             mensagens.mensagem.add("O nome informado não deve ser nulo");
             valido=false;
+        }else if(setor.getNome().length()>255){
+            mensagens.mensagem.add("O nome informado não deve possuir mais que 255 caracteres");
+            valido=false;
         }
         return valido;
+    }
+    public Mensagem getMensagens() {
+        return mensagens;
+    }
+
+    public void setMensagens(Mensagem mensagens) {
+        this.mensagens = mensagens;
     }
 }
