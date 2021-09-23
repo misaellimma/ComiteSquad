@@ -26,7 +26,7 @@ public class ComiteController {
 	}
 	
 	  @PostMapping("incluir")
-	    public String incluirCliente(@RequestBody Comite comite) {
+	    public String incluirComite(@RequestBody Comite comite) {
 	        
 	        try{
 	            comiteRepository.save(comite);
