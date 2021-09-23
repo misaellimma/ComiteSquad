@@ -11,9 +11,8 @@ public class ModalidadeBiz {
     private ModalidadeRepository modalidadeRepository;
     private ConfederacaoRepository confederacaoRepository;
 
-    public ModalidadeBiz(Mensagem mensagem, ModalidadeRepository modalidadeRepository, ConfederacaoRepository confederacaoRepository) {
-        this.mensagem = mensagem;
-        this.modalidadeRepository = modalidadeRepository;
+    public ModalidadeBiz(ConfederacaoRepository confederacaoRepository) {
+        this.mensagem = new Mensagem();
         this.confederacaoRepository = confederacaoRepository;
     }
 
