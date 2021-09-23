@@ -2,13 +2,11 @@ package com.treinamento.comitesquad.biz;
 import com.treinamento.comitesquad.Mensagem;
 import com.treinamento.comitesquad.entities.Modalidade;
 import com.treinamento.comitesquad.repositories.ConfederacaoRepository;
-import com.treinamento.comitesquad.repositories.ModalidadeRepository;
 
 public class ModalidadeBiz {
 
     private Mensagem mensagem;
 
-    private ModalidadeRepository modalidadeRepository;
     private ConfederacaoRepository confederacaoRepository;
 
     public ModalidadeBiz(ConfederacaoRepository confederacaoRepository) {
