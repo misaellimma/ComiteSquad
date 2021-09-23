@@ -1,10 +1,11 @@
 package com.treinamento.comitesquad.repositories;
 
-import com.treinamento.comitesquad.entities.Evento;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.treinamento.comitesquad.entities.Cidade;
+
 @Repository
-public interface EventoRepository extends JpaRepository<Evento, Integer> {
+public interface CidadeRepository extends JpaRepository<Cidade, Integer>{
 
 }
