@@ -26,7 +26,7 @@ public class CidadeBiz {
 		}
 			
 		if (provinciaRepository.findById(cidade.getId_provincia()).isEmpty()) {
-			msg.getMensagem().add(("O setor do funcionario não existe"));
+			msg.getMensagem().add(("A província não existe"));
 			valido = false;
 		}
 		
