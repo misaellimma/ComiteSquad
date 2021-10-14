@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,12 +25,14 @@ public class ComiteController {
 	@Autowired
 	private ComiteRepository comiteRepository;
 	
+	@CrossOrigin
 	@GetMapping("listar")
 	public List<Comite> listarComite(){
 		List<Comite> lista = comiteRepository.findAll();
 		return lista;
 	}
 	
+	@CrossOrigin
 	@PostMapping("incluir")
 	public Mensagem incluirComite(@Validated @RequestBody Comite comite) {
 		

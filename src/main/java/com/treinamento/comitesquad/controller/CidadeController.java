@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,12 +28,14 @@ public class CidadeController {
 	@Autowired 
 	private ProvinciaRepository provinciaRepository;
 
+	@CrossOrigin
 	@GetMapping("listar")
 	public List<Cidade> listar(){
 		List<Cidade> lista = cidadeRepository.findAll();
 		return lista;
 	}
 	
+	@CrossOrigin
 	@PostMapping("incluir")
 	public Mensagem incluirCidade(@Validated @RequestBody Cidade cidade) {
 		
